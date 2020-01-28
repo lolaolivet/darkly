@@ -1,0 +1,8 @@
+Dans le dossier whatever, on nous donne un login et un mot de passe:
+root:8621ffdbc5698829397d97767ac13db3
+
+le mot de passe decrypter en md5 donne dragon.
+
+Pour trouver ou les entrer, j'ai scanner a l'aide de Dirb les fichier vulnerables: dirb http://10.1.1.5/
+
+On trouve donc un dossier cache /admin qui contient un fichier index.php, en allant sur http://10.1.1.5/admin/index.php il suffit de rentrer le login root et le mot de passe dragon.

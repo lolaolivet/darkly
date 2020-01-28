@@ -1,0 +1,2 @@
+Sur la page signin, quand on inspecte la page et qu'on va dans Storage, on peut voir qu'il y a un cookie: i_am_admin:68934a3e9455fa72420237eb05902327
+Si on decrypte le code en MD5, cela veut dire 'false'. J'ai donc crypter 'true' en MD5, puis j'ai change la valeur du cookie par le code: b326b5062b2f0e69046810717534cb09 et rafraichi la page.

