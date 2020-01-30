@@ -1,3 +1,8 @@
-Sur la page feedback, on peut injecter dans le champ nom une balise html, il ne faut pas que le texte depasse les 10 chars.
+Sur la page feedback.
+On peut injecter dans le champ nom une balise html, il ne faut pas que le texte depasse les 10 chars.
 
 <h1>a</h1>
+
+ATTENTION: Ne marche pas tout le temps.. redemarrer le serveur si necessaire.
+
+Il faut verifier les valeurs de tous les champs. (htmlentities par exemple)

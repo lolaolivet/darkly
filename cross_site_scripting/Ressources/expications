@@ -1,4 +1,0 @@
-Sur la page redirect, j'ai insere dans le deuxieme parametre, qui est site, une balise <script> qui contient la fonction alert().
-
-http://10.1.1.5/index.php?page=redirect&site=<script>alert(123)</script>
-

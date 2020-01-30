@@ -1,3 +1,6 @@
-Sur la page recover (pour le mot de passe oublie).
-Quand on inspecte le bouton submit de la page, on peut voir qu'il y a un input hidden avec une value='webmaster@borntosec.com' si on remplace cette value par "OR 1=1
+Sur la page recover.
+Quand on inspecte le bouton submit de la page, on peut voir qu'il y a un input hidden avec une value='webmaster@borntosec.com' si on remplace cette value par n'importe quoi. (J'ai mis ma propre adresse email de 42).
+
 On obtient le flag.
+
+Il faut de nouveau verifier les valeurs qu'on recoit. Verifier que c'est bien un email et pas du code malveillant.

@@ -1,5 +1,8 @@
 Sur la page e43ad1fdc54babe674da7c7b8f0127bde61de3fbe01def7d00f151c2fcca6d1c.
 Quand on inspecte, on voit plusieurs lignes de commentaires, parmi elles, on peut lire qu'il faut venir du site https://www.nsa.gov/ pour la suite. Puis un autre commentaire indique qu'avec le browser ft_bornToSec c'est mieux.
-J'ai donc utilise curl pour faire cette manipulation: curl -A "ft_bornToSec" --referer "https://www.nsa.gov/" "http://10.1.1.5/index.php?page=e43ad1fdc54babe674da7c7b8f0127bde61de3fbe01def7d00f151c2fcca6d1c" > index.html
+J'ai donc utilise curl pour faire cette manipulation:
+curl -A "ft_bornToSec" --referer "https://www.nsa.gov/" "http://10.1.1.5/index.php?page=e43ad1fdc54babe674da7c7b8f0127bde61de3fbe01def7d00f151c2fcca6d1c" > index.html
 
 On ouvre ensuite index.html avec le navigateur pour trouver le flag.
+
+On peut creer une block list et bloquer les ips qui veulent acceder a notre contenu. Configurer le serveur. sur Apache, on peut mettre sur Off TraceEnable.

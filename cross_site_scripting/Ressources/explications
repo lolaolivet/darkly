@@ -1,0 +1,6 @@
+Sur la page redirect.
+J'ai insere dans le deuxieme parametre, qui est site, une balise <script> qui contient la fonction alert().
+
+http://10.1.1.5/index.php?page=redirect&site=<script>alert(123)</script>
+
+Verifier ce qu'on met dans les parametres, ne pas accepter les balises HTML. Echapper la valeur passee au parametre avant d'inserer ou d'executer la requete.

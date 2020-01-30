@@ -1,4 +1,5 @@
-Sur la page upload, on peut faire un traversal directory qui consiste a aller dans les dossiers du serveur et d'afficher les fichiers qu'on veut.
+Si on essaie de rajouter quelque chose a l'url, une alerte apparait, on peut essayer de faire un traversal directory qui consiste a aller dans les dossiers du serveur et de chercher des fichiers sensibles. J'ai donc choisi le passwd qui est contenu dans le dossier /etc/. C'est le fichier des utilisateurs du systeme qui contient les noms, logins, etc.
+
 Ici, avec: http://10.1.1.5/index.php?page=upload/../../../../../../../etc/passwd
 
-C'est le fichier des utilisateurs du systeme (noms, logins, etc)
+On peut proteger les dossiers en changeant les droits, refuser les requetes URI qui ressemblent a un chemin vers un fichier autre que ce qu'on a besoin pour le site.

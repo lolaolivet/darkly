@@ -1,7 +1,13 @@
-En faisant wget -r http://10.1.1.5/ j'ai telecharge tous les fichiers. Le fichier robots.txt nous indique les endroits ou il ne faut pas aller: .hidden et whatever
+En faisant:
+wget -r http://10.1.1.5/
+J'ai telecharge tous les fichiers. On trouve Le fichier robots.txt. Ce fichier est utilisee par les moteurs de recherche. Il leur indique les fichiers et dossiers qu;ils peuvent ou non demander.Il va ici nous indiquer les endroits ou il ne faut pas aller: .hidden et whatever
 
-Dans .hidden, j'ai telecharger tous les README recursivement: wget -np -r -A "README*" -nd -l 0 -e robots=off http://10.1.1.5/.hidden/
+Dans .hidden.
+Il y a un README et plusieurs dossiers qui contiennent des dossiers et d'autres README. J'ai telecharge tous les README recursivement:
+ wget -np -r -A "README*" -nd -l 0 -e robots=off http://10.1.1.5/.hidden/
 
-Ensuite j'ai mis tous les README.1* dans un fichier ou j'ai ensuite recherche s'il y avait un 0 dedans et j'ai trouve le flag.
+Ensuite j'ai mis le contenu de  tous les README.1* dans un fichier:
+cat README.1* > readme_1
+J'ai ensuite recherche s'il y avait un 0, car le flag peut en contenir, et j'ai trouve le flag.
 
-Je pense qu'il y a une meilleure facon de chercher dans les fichiers..
+Il faut mieux proteger et cacher le fichier robots.txt qui contient des donnees importantes ainsi que les autres dossiers. Changer les droits et mieux les cacher.
