@@ -7,20 +7,20 @@ sécurité web à ce jour.
 Vous allez aussi comprendre ce que beaucoup de frameworks font de manière automatique et complètement transparente pour vous.
 
 ## Partie obligatoire
-• Votre dossier de rendu ne doit contenir que les choses qui vous ont permises de
+- Votre dossier de rendu ne doit contenir que les choses qui vous ont permises de
 résoudre chacune des failles exploitées.
-• Dans le dossier Ressources vous placerez tout ce dont vous aurez besoin pour
+- Dans le dossier Ressources vous placerez tout ce dont vous aurez besoin pour
 prouver votre résolution en soutenance.
-• Si vous avez besoin d’utiliser un fichier spécifique présent sur l’ISO du projet, vous
+- Si vous avez besoin d’utiliser un fichier spécifique présent sur l’ISO du projet, vous
 devez le télécharger en soutenance. Vous ne devez sous aucun prétexte mettre
 celui-ci dans votre dépôt.
-• Dans le cas d’utilisation d’un logiciel spécifique externe, vous devez préparer un
+- Dans le cas d’utilisation d’un logiciel spécifique externe, vous devez préparer un
 environnement spécifique (VM, docker, Vagrant).
-• Dans le cadre de votre partie obligatoire, vous devez compléter 14 failles différentes.
-• Lors de votre soutenance, dans certains cas, il vous sera demandé des possibles
+- Dans le cadre de votre partie obligatoire, vous devez compléter 14 failles différentes.
+- Lors de votre soutenance, dans certains cas, il vous sera demandé des possibles
 fix pour les failles que vous avez exploitées. Il est donc fortement conseillé de bien
 comprendre tout ce que vous exploitez.
-• Savoir expliquer est souvent plus important que l’exploitation en elle-même : prenez bien le temps de comprendre, et surtout de faire en sorte que vous puissiez
+- Savoir expliquer est souvent plus important que l’exploitation en elle-même : prenez bien le temps de comprendre, et surtout de faire en sorte que vous puissiez
 être compris clairement.
 
 ## Note
